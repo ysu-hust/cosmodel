@@ -1,0 +1,12 @@
+*.pyc
+dist
+build
+*egg*
+*sublime*
+*~
+docs/*.log
+*.bbl
+docs/*.gz
+*.blg
+*.dvi
+*.aux
