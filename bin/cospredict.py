@@ -33,17 +33,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="predict with different performance models")
     subparsers = parser.add_subparsers(help='choose running mode')
 
-    sysstatusproc_parser = subparsers.add_parser('sysstatusproc', help='convert system status log file to pandas dataframe and save')
+    sysstatusproc_parser = subparsers.add_parser('convert', help='convert system online metrics log file to pandas dataframe and save as hdf file')
     sysstatusproc_parser.add_argument('-i', '--input-file', type=str,
-                                      help='system status log file')
+                                      help='system online metrics log file')
     sysstatusproc_parser.add_argument('-o', '--output-file', type=str, default='systemstatus.log.h5',
-                                      help='hdf file for pandas dataframe')
+                                      help='output hdf file for pandas dataframe')
     sysstatusproc_parser.set_defaults(func=preprocessing_sysstatus)
 
-    loadss_parser = subparsers.add_parser('loadss', help='load sysstatus hdf5 files and display measured '
-                                                       'and estimated slo meet percentage')
+    loadss_parser = subparsers.add_parser('predict', help='predict the percentiles of requests meeting SLA based on '
+                                                         'a collection of system online metrics (a hdf file)')
     loadss_parser.add_argument('-s', '--system-status', type=str, action='append', default=[],
-                               help='system status log file')
+                               help='file (hdf file) contains system online metrics')
     loadss_parser.add_argument('-p', '--period-duration', type=long, default=60*10*100,
                                help='change step duration default is 10 mins((60000 in 10 ms))')
     loadss_parser.add_argument('-l', '--slo-latencys', action='append', default=[], type=float,
