@@ -3,9 +3,9 @@
 - [Introduction of COSModel](#introduction-of-cosmodel)
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
-	- [The Predictor](#the-predictor)
-	- [The Collectors](#the-collectors)
-	- [The Estimators](#the-estimators)
+  - [The Predictor](#the-predictor)
+  - [The Collectors](#the-collectors)
+  - [The Estimators](#the-estimators)
 - [Configurations](#configurations)
 - [Future](#future)
 
@@ -131,8 +131,7 @@ The configurations are in the `utils/default_config.py`. Re-installation is requ
 
 ---
 
-Please refer the research paper of COSModel for more information.
+Please refer the research paper of COSModel[1] for more information.
 
-Thanks,
 
-Su Yi
+[1] Yi Su, Dan Feng, Yu Hua, Zhan Shi, "Predicting Response Latency Percentiles for Cloud Object Storage Systems", Proceedings of the 46th International Conference on Parallel Processing (ICPP), 2017.
